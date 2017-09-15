@@ -4,12 +4,10 @@
     ViewBag.Title = "View";
 }
 
-@using (Html.BeginForm("Index", "File", FormMethod.Post))
+@foreach (var file in Model.Files)
 {
-    foreach (var file in Model.Files)
-    {
-        @Html.ActionLink(file, "Content", new { id = file });
-    }
+    @Html.ActionLink(file, "Content", new { id = file })<br/>
 }
+
 
 
